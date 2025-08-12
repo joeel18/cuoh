@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Licenciaturas - Centro Universitario</title>
+  <style>
+    /* Reset y base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9fafb;
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header fijo */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 60px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      z-index: 1000;
+      gap: 40px;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+    }
+
+    /* Logo */
+    header a {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Menús */
+    #menuCarreras, #menuLic {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: #004080;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s ease, color 0.3s ease;
+      white-space: nowrap;
+    }
+
+    nav button:hover {
+      color: #3399ff;
+    }
+
+    nav button.active {
+      border-bottom: 3px solid #3399ff;
+      color: #3399ff;
+      font-weight: 700;
+    }
+
+    main {
+      padding: 100px 20px 40px;
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+      min-height: 60vh;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    h2 {
+      color: #004080;
+      margin-bottom: 15px;
+      font-size: 2rem;
+      border-bottom: 3px solid #3399ff;
+      padding-bottom: 5px;
+      text-align: left;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #444;
+      white-space: pre-line;
+      margin-bottom: 1.2em;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 15px;
+      }
+      #menuCarreras, #menuLic {
+        gap: 10px;
+        justify-content: center;
+        width: 100%;
+        margin-top: 5px;
+      }
+      nav button {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+      }
+      main {
+        padding: 120px 15px 30px;
+        font-size: 0.95rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html">
+    <img src="img/logo.png" alt="Centro Universitario" height="40" />
+  </a>
+
+  <div style="display: flex; gap: 30px; align-items: center; flex-wrap: nowrap;">
+    <nav id="menuCarreras">
+      <button class="active" data-carrera="pedagogia">Licenciatura en Pedagogía</button>
+      <button data-carrera="derecho">Licenciatura en Derecho</button>
+    </nav>
+
+    <nav id="menuLic">
+      <button class="active" data-section="detalles">Detalles del Programa</button>
+      <button data-section="perfilIngreso">Perfil de Ingreso</button>
+      <button data-section="planEstudios">Plan de Estudios</button>
+      <button data-section="perfilEgreso">Perfil de Egreso</button>
+      <button data-section="caracteristicas">Características</button>
+    </nav>
+  </div>
+</header>
+
+<main id="contenidoLic">
+  <!-- Contenido cargado por JS -->
+</main>
+
+<script>
+  const contenido = {
+    pedagogia: {
+      detalles: `La Licenciatura en Pedagogía en nuestro Centro Universitario del Oriente de Hidalgo no solo te brinda una formación integral en educación, sino que también te prepara para UNA DE LAS PROFESIONES MÁS DEMANDADAS EN LA ACTUALIDAD. Sumérgete en un mundo fascinante de investigación y reflexión sobre la educación, donde adquirirás competencias que te abrirán las puertas a diversas oportunidades laborales.
+
+Al elegir esta carrera, te convertirás en un experto en sistemas y procesos educativos, desempeñando un papel crucial en la planificación, ejecución y evaluación de programas educativos. Nuestra formación te capacitará para analizar y comprender los diversos aspectos que conforman las situaciones educativas en diferentes contextos formativos, así como para diseñar programas, acciones y proyectos adaptados a dichos contextos.
+
+Además, como estudiante de esta carrera, te convertirás en un hábil confeccionista de materiales didácticos, con la importante misión de facilitar el proceso de enseñanza y aprendizaje, contribuyendo al desarrollo tanto individual como colectivo de las personas y las sociedades.
+
+Es fundamental destacar que la Licenciatura en Pedagogía no se limita únicamente al ámbito de la niñez, sino que abarca todas las etapas vitales del ser humano. Su alcance se extiende a diversos ámbitos donde se desarrolla la persona: educativo, familiar, social, cultural o laboral.`,
+      perfilIngreso: `Los candidatos a cursar esta licenciatura deberán contar con un certificado de preparatoria o bachillerato con validez oficial, sin importar el propedéutico que hayan cursado, ni su edad.`,
+      planEstudios: `El plan de estudios es autorizado por Secretaría de Educación Pública Estatal, acuerdo IHEMSYS 0619103, en un plan de 9 cuatrimestres y un total de 3 años.
+
+Horario matutino
+
+Lunes a Viernes 7:00 a 11:00 hrs
+
+Horario ejecutivo:
+
+Viernes y Sábado 3:00 a 9:00 y 7:00 a 16:00 hrs`,
+      perfilEgreso: `Los egresados de la Licenciatura de Pedagogía no sólo pueden desarrollarse en el ámbito de instituciones educativas, sino que pueden trabajar en el sector empresarial, gubernamental, deportivo, familiar, entre otros. Además en todo tipo de empresas públicas o privadas, en áreas en las que se requiera desarrollo de personal para potenciar sus capacidades.`,
+      caracteristicas: `Ciencia que estudia la educación, debe tener un alto sentido de la responsabilidad y de ética ya que en sus manos tiene el futuro y la formación del ser humano en sus primeros años de educación. Teniendo como objetivo educar como un fenómeno socio-cultural por lo que existen conocimientos de otras ciencias que ayudan a comprender el concepto de educar.`
+    },
+    derecho: {
+      detalles: `Permite ser parte de procesos jurídicos, administrativos y contribuir con el bienestar de la sociedad en pro de la justicia. Un abogado es el profesional que ejerce la defensa jurídica, los procesos judiciales y administrativos ocasionados en un juicio.`,
+      perfilIngreso: `Los candidatos a cursar esta licenciatura deberán contar con un certificado de preparatoria o bachillerato con validez oficial, sin importar el propedéutico que hayan cursado, ni su edad.`,
+      planEstudios: `El plan de estudios es autorizado por Secretaría de Educación Pública Estatal, acuerdo IHEMSYS 0619101, en un plan de 9 cuatrimestres y un total de 3 años.
+
+Horario matutino
+
+Lunes a Viernes 7:00 a 11:00 hrs
+
+Horario ejecutivo:
+
+Viernes y Sábado 3:00 a 9:00 y 7:00 a 16:00 hrs`,
+      perfilEgreso: `Los egresados de la Licenciatura en Derecho pueden trabajar en organismos de gobierno, empresas privadas, despachos, consultorías, instituciones educativas, etc. Con funciones como Notario público, Corredor Público, Titular o Asesor en Direcciones jurídicas, Ministro, Magistrado o Juez, Asesor Jurídico, Director en despachos o buffets, en el departamento legal de empresas, Docente, etc.`,
+      caracteristicas: `La licenciatura en derecho tiene como objetivo formar profesionales que sean capaces de argumentar y dar soluciones a los conflictos siempre con sensibilidad social de justicia e igualdad. Capacidad de negociación, organización, habilidades comunicativas, sólida formación de respeto, honestidad, empatía y confianza en sí mismo.`
+    }
+  };
+
+  // Elementos
+  const btnCarreras = document.querySelectorAll('#menuCarreras button');
+  const btnSecciones = document.querySelectorAll('#menuLic button');
+  const contenidoMain = document.getElementById('contenidoLic');
+
+  // Estado actual
+  let carreraActual = 'pedagogia';
+  let seccionActual = 'detalles';
+
+  // Función para mostrar contenido
+  function mostrarContenido() {
+    const texto = contenido[carreraActual][seccionActual];
+    const titulo = {
+      detalles: 'Detalles del Programa',
+      perfilIngreso: 'Perfil de Ingreso',
+      planEstudios: 'Plan de Estudios',
+      perfilEgreso: 'Perfil de Egreso',
+      caracteristicas: 'Características'
+    }[seccionActual];
+
+    contenidoMain.innerHTML = `
+      <h2>${titulo}</h2>
+      <p>${texto}</p>
+    `;
+  }
+
+  // Cambiar carrera
+  btnCarreras.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Cambiar activo
+      btnCarreras.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      // Cambiar carrera y reset sección a detalles
+      carreraActual = btn.getAttribute('data-carrera');
+      seccionActual = 'detalles';
+      // Actualizar menú secciones
+      btnSecciones.forEach(b => b.classList.remove('active'));
+      btnSecciones[0].classList.add('active');
+      // Mostrar contenido
+      mostrarContenido();
+    });
+  });
+
+  // Cambiar sección
+  btnSecciones.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btnSecciones.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      seccionActual = btn.getAttribute('data-section');
+      mostrarContenido();
+    });
+  });
+
+  // Mostrar contenido inicial
+  mostrarContenido();
+</script>
+
+</body>
+</html>

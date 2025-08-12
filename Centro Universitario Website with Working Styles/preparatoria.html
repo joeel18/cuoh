@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preparatoria - Centro Universitario</title>
+  <style>
+    /* Reset y base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9fafb;
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header fijo */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #004080;
+      color: #fff;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
+      height: 60px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      height: 100%;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: #d1e8ff;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0 15px;
+      cursor: pointer;
+      height: 100%;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav button.active {
+      border-bottom: 3px solid #3399ff;
+      color: #3399ff;
+      font-weight: 700;
+    }
+
+
+    /* Contenedor contenido */
+    main {
+      padding: 90px 20px 40px; /* espacio para header fijo */
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+      min-height: 60vh;
+      line-height: 1.6;
+    }
+
+    h2 {
+      color: #004080;
+      margin-bottom: 15px;
+      font-size: 2rem;
+      border-bottom: 3px solid #3399ff;
+      padding-bottom: 5px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #444;
+      white-space: pre-line; /* conserva saltos de línea */
+    }
+
+    /* Scroll suave para navegacion */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav {
+        gap: 1rem;
+      }
+      nav button {
+        font-size: 0.9rem;
+        padding: 0 10px;
+      }
+      main {
+        padding: 80px 15px 30px;
+        font-size: 0.95rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header style="
+  position: fixed; 
+  top: 0; left: 0; right: 0; 
+  height: 60px; 
+  background: #fff; 
+  display: flex; 
+  align-items: center; 
+  padding: 0 20px;  /* Padding horizontal para respirar */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15); 
+  z-index: 1000;
+  gap: 30px; /* espacio entre logo y menú */
+">
+  <a href="index.html" style="display: flex; align-items: center;">
+    <img src="img/logo.png" alt="Centro Universitario" height="40" />
+  </a>
+
+  <nav id="menuPrepa" style="
+    display: flex;
+    gap: 15px;
+  ">
+    <button class="active" data-section="detalles">Detalles del Programa</button>
+    <button data-section="perfilIngreso">Perfil de Ingreso</button>
+    <button data-section="planEstudios">Plan de Estudios</button>
+    <button data-section="perfilEgreso">Perfil de Egreso</button>
+    <button data-section="caracteristicas">Características</button>
+  </nav>
+</header>
+
+
+<main id="contenidoPrepa" style="padding-top: 70px;">
+  <!-- Contenido cargado por JS -->
+</main>
+
+<script>
+  // Contenidos según botón
+  const contenido = {
+    detalles: `Si estás en el proceso de evaluar tus opciones educativas y aún no has decidido qué modalidad de preparatoria elegir, te invitamos a considerar la opción de estudiar la Preparatoria en 2 años. Esta alternativa ofrece numerosas ventajas que pueden beneficiar tu trayectoria académica y profesional. Al optar por la Preparatoria en 2 años, tienes la oportunidad de ingresar anticipadamente a la Universidad, lo que te permite avanzar más rápido en tu formación académica y acceder a nuevas oportunidades de aprendizaje y desarrollo. Además, si ya has invertido un año en otras actividades, esta modalidad te permite optimizar tu tiempo y evitar perder otro ciclo escolar.
+
+Una de las ventajas más destacadas de estudiar la preparatoria en 2 años es la posibilidad de perfeccionar un idioma y, en algunos casos, incluso realizar estudios en el extranjero. Esta experiencia enriquecedora te brinda la oportunidad de expandir tus horizontes culturales y académicos, preparándote para enfrentar los desafíos de un mundo globalizado.
+
+En el Centro Universitario del Oriente de Hidalgo, te ofrecemos la posibilidad de continuar tus estudios de preparatoria en tan solo 2 años, gracias a nuestro plan de estudios cuatrimestral. Además, contamos con un sistema de equivalencias y revalidaciones que te permite el reconocimiento oficial de tus estudios ya cursados en otra preparatoria, facilitando tu transición hacia la universidad.
+
+Como parte de nuestra propuesta educativa, también te brindamos la oportunidad de complementar tu formación académica con una Carrera Técnica en Mecánica Automotriz, sin costo adicional. Esta opción te permite adquirir habilidades prácticas y especializadas que te serán útiles en el mundo laboral. Además de nuestra oferta académica, en el Centro Universitario del Oriente de Hidalgo valoramos el desarrollo integral de nuestros estudiantes. Por ello, contamos con una amplia variedad de talleres extracurriculares, entre los que se incluyen:
+
+Deportes
+Arte y Cultura
+Baile
+Diseño Digital
+Estos talleres te brindan la oportunidad de explorar tus intereses y habilidades fuera del aula, fomentando tu creatividad, liderazgo y trabajo en equipo.
+
+En resumen, la Preparatoria en 2 años del Centro Universitario del Oriente de Hidalgo te ofrece una experiencia educativa integral y enriquecedora, que te prepara para alcanzar tus metas académicas y profesionales con éxito. Te invitamos a formar parte de nuestra comunidad estudiantil y a descubrir todas las oportunidades que tenemos para ti. ¡No esperes más para comenzar tu camino hacia el éxito!`,
+
+    perfilIngreso: `Alumnos que hayan terminado su secundaria en modalidad técnica o tradicional, privadas o públicas y no ser mayor de 21 años.`,
+
+    planEstudios: `El plan de estudios es emitido y autorizado por la Secretaría de Educación Pública. Además, contamos con un nuevo modelo académico con una visión holística del ser humano del siglo XXI y una metodología prospectiva para el desarrollo social a 30 años. Es emitido y autorizado por la dirección general de bachilleres (DGB) de la Secretaría de Educación Pública. RVOE 13/985.
+
+Horario Prepa
+
+Lunes a Viernes 9:00 hrs a 14:45 hrs
+
+Carrera Técnica (opcional)
+
+Jueves y Viernes 15:00 hrs a 17:00 hrs`,
+
+    perfilEgreso: `El alumno al terminar su bachillerato obtendrá un certificado de la secretaría de educación pública con validez oficial y podrá ingresar a cualquier universidad pública o privada. Nuestra preparatoria es ideal para ti que buscas seguir desarrollándote y preparándote para integrarte al sector laboral o continuar tus estudios a nivel profesional.`,
+
+    caracteristicas: `El estudiante es el centro de todo esfuerzo formativo y de desarrollo humano.`
+  };
+
+  // Elementos
+  const botones = document.querySelectorAll('#menuPrepa button');
+  const contenidoMain = document.getElementById('contenidoPrepa');
+
+  // Función para mostrar contenido
+  function mostrarSeccion(seccion) {
+    contenidoMain.innerHTML = `
+      <h2>${botonesArray[seccion]}</h2>
+      <p>${contenido[seccion]}</p>
+    `;
+  }
+
+  // Títulos para las secciones
+  const botonesArray = {
+    detalles: 'Detalles del Programa',
+    perfilIngreso: 'Perfil de Ingreso',
+    planEstudios: 'Plan de Estudios',
+    perfilEgreso: 'Perfil de Egreso',
+    caracteristicas: 'Características'
+  };
+
+  // Inicializar con 'detalles'
+  mostrarSeccion('detalles');
+
+  // Agregar eventos a botones
+  botones.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remover active a todos
+      botones.forEach(b => b.classList.remove('active'));
+      // Agregar active al clickeado
+      btn.classList.add('active');
+      // Mostrar contenido
+      mostrarSeccion(btn.getAttribute('data-section'));
+    });
+  });
+</script>
+
+</body>
+</html>
